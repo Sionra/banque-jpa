@@ -2,8 +2,10 @@ package fr.diginamic.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Embeddable
-public class Adresse {
+public class Adresse implements Serializable {
 
     @Column(name = "NUMERO")
     private int numero;

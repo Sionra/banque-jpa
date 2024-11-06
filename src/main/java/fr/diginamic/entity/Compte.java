@@ -2,10 +2,12 @@ package fr.diginamic.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class Compte {
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Compte implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")

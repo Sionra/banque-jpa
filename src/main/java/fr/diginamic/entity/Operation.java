@@ -2,9 +2,11 @@ package fr.diginamic.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 @Entity
-public class Operation {
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Operation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -51,5 +53,13 @@ public class Operation {
 
     public void setMotif(String motif) {
         this.motif = motif;
+    }
+
+    public Compte getCompte() {
+        return compte;
+    }
+
+    public void setCompte(Compte compte) {
+        this.compte = compte;
     }
 }

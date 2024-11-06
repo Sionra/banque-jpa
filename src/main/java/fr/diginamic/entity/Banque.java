@@ -2,10 +2,11 @@ package fr.diginamic.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class Banque {
+public class Banque implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

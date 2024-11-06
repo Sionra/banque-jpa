@@ -4,11 +4,12 @@ package fr.diginamic.entity;
 import jakarta.persistence.*;
 import org.checkerframework.checker.units.qual.A;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
-public class Client {
+public class Client implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
